@@ -1,49 +1,287 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Felipe Reblin</title>
+    <title>Felipe Reblin - Dev</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Seu CSS personalizado -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <img src="/assets/fotoPerfil.jpeg" alt="Foto do Analista" class="profile-photo">
-            <div>
-                <h1>Felipe Reblin</h1>
-                <p>Analista de Dados</p>
+
+    <!-- Cabeçalho -->
+    <header class="bg-dark text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Reblin</h1>
+            <div class="mt-4">
+                <a href="assets/CV_FELIPE REBLIN_AN.pdf" class="btn btn-primary btn-lg m-2" download>Download CV</a>
+                <a href="#portfolio" class="btn btn-secondary btn-lg m-2">Ver Projetos</a>
             </div>
         </div>
     </header>
-    <section id="sobre-mim">
-        <h2>Olá, me chamo Felipe.</h2>
-        <p>Possuo vivência na área de tecnologia e Business Intelligence, atuando na análise e desenvolvimento de dashboards via Power BI, extração de relatórios e desenvolvimento de aplicações para automação de processos e coleta de dados;
-            Entrega de resultados reais e cases ativos ainda hoje com profissionais disponíveis para consulta e referência.</p>
-    </section>
-    <section id="projetos">
-        <h2>Projetos</h2>
-        <div class="projeto">
-            <img src="/assets/safetymob1.jpg" alt="Dashboard do Projeto 1">
-            
-            <img src="/assets/safetymob2.jpg" alt="Dashboard do Projeto 2">
-            <h3>Safety Mob</h3>
-            <p>Sistema para mobilização de contratadas. Isso possibilitou a empresa Ligga S/A fazer todo processo de gestão de documentos, 
-                emissão de passaportes e coletar dados para indicadores referente gestão de contratadas. Feito em Power Apps, integrado com Sharepoint, Power Automate e Power BI;</p>
-        </div>
-        <div class="projeto">
-            <img src="/assets/safetygo1.jpg" alt="Dashboard do Projeto 2">
 
-            <img src="/assets/dashboard1.jpg" alt="Dashboard do Projeto 2">
-            <h3>Safety GO</h3>
-            <p>Implantação de aplicação própria chamada Safety GO, este trabalho possibilitou a companhia emitir e gerenciar relatórios técnicos de saúde e 
-                segurança e gerar KPIs em tempo real. Desenvolvido em Power Apps, integrado ao Power BI, Power Automate e Sharepoint;</p>
+    <!-- Navegação -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/logo.png" alt="Logo" height="80">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfólio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção Principal -->
+    <section class="hero-section bg-dark text-white d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Texto -->
+                <div class="col-md-6">
+                    <h2 class="display-5">Olá, eu sou <span class="text-primary">Felipe Reblin</span></h2>
+                    <p class="lead mt-4">Desenvolvedor web com foco em soluções inovadoras e design responsivo. Tenho experiência em Power Apps, JavaScript, Power BI, SharePoint e Power Automate.</p>
+                    <div class="mt-4">
+                        <a href="assets/CV_FELIPE REBLIN_AN.pdf" class="btn btn-primary btn-lg m-2" download>Download CV</a>
+                        <a href="#portfolio" class="btn btn-secondary btn-lg m-2">Meus Projetos</a>
+                    </div>
+                </div>
+                <!-- Imagem -->
+                <div class="col-md-6 text-center">
+                    <img src="assets/fotoPerfil.jpeg" alt="Minha foto" class="img-fluid rounded-circle shadow-lg hover-zoom w-50">
+                </div>
+            </div>
         </div>
     </section>
-    <section id="contato">
-        <h2>Contato</h2>
-        <p>Email: reblinfelipe@gmail.com</p>
-        <p>LinkedIn: <a href="#">https://www.linkedin.com/in/felipe-reblin-ehs/</a></p>
+
+    <!-- Seção de Habilidades -->
+    <section id="skills" class="skills-section bg-secondary text-white py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Minhas Habilidades</h2>
+            <div class="row">
+                <!-- Texto -->
+                <div class="col-md-6">
+                    <p>Com anos de experiência no desenvolvimento e automação de processos, utilizo as tecnologias mais modernas para criar soluções eficientes e inovadoras.</p>
+                    <p>Minha expertise inclui desenvolvimento em JavaScript, aplicativos empresariais com Power Apps, visualização de dados com Power BI, gestão de documentos com SharePoint, e automação de processos com Power Automate.</p>
+                </div>
+                <!-- Barras de Habilidades -->
+                <div class="col-md-6">
+                    <div class="mb-4">
+                        <h4>JavaScript</h4>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 85%;">85%</div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h4>Power Apps</h4>
+                        <div class="progress">
+                            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 90%;">90%</div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h4>Power BI</h4>
+                        <div class="progress">
+                            <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" style="width: 80%;">80%</div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h4>SharePoint</h4>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%;">75%</div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h4>Power Automate</h4>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 85%;">85%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- Seção de Portfólio -->
+    <section id="portfolio" class="portfolio-section bg-dark text-white py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Portfólio</h2>
+            <div class="row g-4">
+                <!-- Projeto 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card bg-dark text-white border-0 hover-zoom">
+                        <img src="assets/dashboard1.jpg" class="card-img-top" alt="Dashboard Project">
+                        <div class="card-body">
+                            <h5 class="card-title">Dashboard Analytics</h5>
+                            <p class="card-text">Desenvolvimento de relatórios estatísticos automatizados de taxas de frequência e de gravidade para o setor de segurança do trabalho na empresa Ligga.</p>
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#project1Modal">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card bg-dark text-white border-0 hover-zoom">
+                        <img src="assets/safetygo1.jpg" class="card-img-top" alt="SafetyGo Project">
+                        <div class="card-body">
+                            <h5 class="card-title">SafetyGo App</h5>
+                            <p class="card-text">Aplicativo para gestão de segurança em ambientes corporativos desenvolvido com Power Apps.</p>
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#project2Modal">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card bg-dark text-white border-0 hover-zoom">
+                        <img src="assets/safetymob1.jpg" class="card-img-top" alt="SafetyMob Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">SafetyMob</h5>
+                            <p class="card-text">Sistema para gestão de contratadas para a empresa Ligga.</p>
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#project3Modal">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card bg-dark text-white border-0 hover-zoom">
+                        <img src="assets/safetymob2.jpg" class="card-img-top" alt="SafetyMob Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Dashboard Power BI a partir de dados dos sistemas.</h5>
+                            <p class="card-text">Dashboard em Power BI com dados automatizados integrados dos sistemas de mobilização e controle de desvios</p>
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#project4Modal">Ver Detalhes</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>   
+
+
+        <!-- Modais para Projetos -->
+        <!-- Modal Projeto 1 -->
+        <div class="modal fade" id="project1Modal" tabindex="-1" aria-labelledby="project1ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content bg-dark text-white">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="project1ModalLabel">Dashboard Analytics</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="assets/dashboard1.jpg" class="img-fluid mb-3" alt="Dashboard Project">
+                        <p>Foi desenvolvido um painel em um sistema power apps onde as empresas contratadas lançam seus dados de incidentes, o sistema alimenta uma base dados no sharepoint que está conectado ao dashboard do power bi que calcula as taxas de forma automática. </p>
+                        <!-- Adicione mais informações conforme necessário -->
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-primary">Visitar Projeto</a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Projeto 2 -->
+        <div class="modal fade" id="project2Modal" tabindex="-1" aria-labelledby="project2ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content bg-dark text-white">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="project2ModalLabel">SafetyGo App</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="assets/safetygo1.jpg" class="img-fluid mb-3" alt="SafetyGo Project">
+                        <p>Aplicativo em power apps para uso mobile dedicado para inspeções de segurança da equipe técnica de segurança do trabalho</p>
+                        <!-- Adicione mais informações conforme necessário -->
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-primary">Visitar Projeto</a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Projeto 3 -->
+        <div class="modal fade" id="project3Modal" tabindex="-1" aria-labelledby="project3ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content bg-dark text-white">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="project3ModalLabel">SafetyMob Mobile</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="assets/safetymob1.jpg" class="img-fluid mb-3" alt="SafetyMob Project 1">
+                        <p>Sistema para gestão de contratadas feito em power apps com base de dados em sharepoint. Sistema completo com cadastro de documentos e requisitos legais voltados para segurança, saúde e meio ambiente.</p>
+                        <!-- Adicione mais informações conforme necessário -->
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-primary">Visitar Projeto</a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Projeto 4 -->
+        <div class="modal fade" id="project4Modal" tabindex="-1" aria-labelledby="project4ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content bg-dark text-white">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="project4ModalLabel">SafetyMob Dashboard</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="assets/safetymob2.jpg" class="img-fluid mb-3" alt="SafetyMob Project 2">
+                        <p>Indicadores em power bi com dados consolidados dos sistemas de inspeções de mobilização de contratadas.</p>
+                        <!-- Adicione mais informações conforme necessário -->
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-primary">Visitar Projeto</a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+<!-- Rodapé / Seção de Contato -->
+<footer id="contact" class="bg-dark text-white text-center py-5">
+    <div class="container">
+        <h2 class="mb-4">Contato</h2>
+        <div class="d-flex justify-content-center mb-4">
+            <!-- Botão WhatsApp -->
+            <a href="https://wa.me/+5591993818230" class="btn btn-success btn-lg m-2" target="_blank" aria-label="WhatsApp">
+                <i class="bi bi-whatsapp me-2"></i>WhatsApp
+            </a>
+            <!-- Botão LinkedIn -->
+            <a href="https://www.linkedin.com/in/felipe-reblin-ehs" class="btn btn-primary btn-lg m-2" target="_blank" aria-label="LinkedIn">
+                <i class="bi bi-linkedin me-2"></i>LinkedIn
+            </a>
+            <!-- Botão Gmail -->
+            <a href="mailto:reblinfelipe@gmail.com" class="btn btn-danger btn-lg m-2" aria-label="Gmail">
+                <i class="bi bi-envelope-fill me-2"></i>Gmail
+            </a>
+            <!-- Botão GitHub -->
+            <a href="https://github.com/Reblix" class="btn btn-dark btn-lg m-2" target="_blank" aria-label="GitHub">
+                <i class="bi bi-github me-2"></i>GitHub
+            </a>
+        </div>
+        <p>© 2021 Felipe Reblin. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

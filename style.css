@@ -1,63 +1,147 @@
+/* Estilos Globais */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    overflow-x: hidden;
 }
 
-header {
-    background-color: #0077cc;
-    color: white;
-    padding: 20px;
-    text-align: center;
+/* Cabeçalho */
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
 }
 
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+header .btn {
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.profile-photo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 20px;
+header .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
 }
 
-section {
-    padding: 20px;
-    margin: 10px;
-    background: white;
-    border-radius: 8px;
+/* Navegação */
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    margin: 0 10px;
+    transition: color 0.3s;
 }
 
-h2 {
-    color: #0077cc;
+.navbar-nav .nav-link:hover {
+    color: #ff3d00;
 }
 
-.projeto img {
-    width: 50%;
-    height: 50%;
-    border-radius: 8px;
+/* Seção Principal */
+.hero-section {
+    padding: 100px 0;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+.hero-section h2 {
+    font-size: 2.5rem;
 }
 
-ul li {
-    padding: 10px;
-    border-bottom: 1px solid #eee;
+.hero-section p {
+    font-size: 1.2rem;
+    color: #ccc;
 }
 
-ul li:last-child {
-    border-bottom: none;
+.hero-section .btn {
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-a {
-    color: #0077cc;
+.hero-section .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Efeito de Zoom na Imagem */
+.hover-zoom {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Seção de Habilidades */
+.skills-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.skills-section p {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.progress {
+    background-color: #333;
+    height: 25px;
+    border-radius: 12.5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    font-size: 1rem;
+    line-height: 25px;
+}
+
+/* Seção de Portfólio */
+.portfolio-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.portfolio-section .card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio-section .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-section .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.portfolio-section .card-img-top:hover {
+    transform: scale(1.1);
+}
+
+/* Rodapé */
+footer a {
+    color: #0d6efd;
     text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero-section {
+        text-align: center;
+    }
+
+    .hero-section .col-md-6 {
+        margin-bottom: 30px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .portfolio-section .card-img-top {
+        height: 150px;
+    }
 }
