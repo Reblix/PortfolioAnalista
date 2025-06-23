@@ -1,3 +1,5 @@
+/* style.css */
+
 /* Estilos Globais */
 body {
     font-family: 'Arial', sans-serif;
@@ -11,13 +13,11 @@ header h1 {
     font-size: 3rem;
     font-weight: bold;
 }
-
 header .btn {
     padding: 10px 30px;
     font-size: 1.1rem;
     transition: transform 0.3s, box-shadow 0.3s;
 }
-
 header .btn:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
@@ -29,7 +29,6 @@ header .btn:hover {
     margin: 0 10px;
     transition: color 0.3s;
 }
-
 .navbar-nav .nav-link:hover {
     color: #ff3d00;
 }
@@ -38,22 +37,18 @@ header .btn:hover {
 .hero-section {
     padding: 100px 0;
 }
-
 .hero-section h2 {
     font-size: 2.5rem;
 }
-
 .hero-section p {
     font-size: 1.2rem;
     color: #ccc;
 }
-
 .hero-section .btn {
     padding: 10px 30px;
     font-size: 1.1rem;
     transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .hero-section .btn:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
@@ -63,33 +58,35 @@ header .btn:hover {
 .hover-zoom {
     transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .hover-zoom:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
 }
 
-/* Seção de Habilidades */
+/* Seção de Habilidades - cartões */
 .skills-section h2 {
     font-size: 2rem;
     margin-bottom: 40px;
 }
-
-.skills-section p {
-    font-size: 1.1rem;
+.skill-card {
+    background-color: #2a2a2a;
+    border-radius: .5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+.skill-card i {
+    margin-bottom: .5rem;
+}
+.skill-card h5 {
+    font-weight: bold;
+    margin-top: .5rem;
+}
+.skill-card p {
+    font-size: 0.95rem;
     color: #ccc;
-}
-
-.progress {
-    background-color: #333;
-    height: 25px;
-    border-radius: 12.5px;
-    overflow: hidden;
-}
-
-.progress-bar {
-    font-size: 1rem;
-    line-height: 25px;
 }
 
 /* Seção de Portfólio */
@@ -97,22 +94,18 @@ header .btn:hover {
     font-size: 2rem;
     margin-bottom: 40px;
 }
-
 .portfolio-section .card {
     transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .portfolio-section .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
 }
-
 .portfolio-section .card-img-top {
     height: 200px;
     object-fit: cover;
     transition: transform 0.3s;
 }
-
 .portfolio-section .card-img-top:hover {
     transform: scale(1.1);
 }
@@ -122,7 +115,6 @@ footer a {
     color: #0d6efd;
     text-decoration: none;
 }
-
 footer a:hover {
     text-decoration: underline;
 }
@@ -132,15 +124,12 @@ footer a:hover {
     .hero-section {
         text-align: center;
     }
-
     .hero-section .col-md-6 {
         margin-bottom: 30px;
     }
-
     .navbar-nav {
         text-align: center;
     }
-
     .portfolio-section .card-img-top {
         height: 150px;
     }
