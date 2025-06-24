@@ -89,6 +89,26 @@ header .btn:hover {
     color: #ccc;
 }
 
+/* Ajustes para os ícones de skill */
+.skill-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+.skill-card:hover .skill-icon {
+    transform: scale(1.1);
+}
+
+/* Título dentro do cartão */
+.skill-card h6 {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+
 /* Seção de Portfólio */
 .portfolio-section h2 {
     font-size: 2rem;
