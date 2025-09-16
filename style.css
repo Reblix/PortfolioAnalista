@@ -1,156 +1,204 @@
 /* style.css */
 
-/* Estilos Globais */
+/* 1. Variáveis e Reset Básico */
+:root {
+  --bg-primary: #0b0b0d;
+  --bg-secondary: #121216;
+  --text-primary: #eaeaea;
+  --text-muted: #b5b5b5;
+  --line-color: #1f1f24;
+  --accent-color: #ffffff;
+  --border-radius: 12px;
+  --container-width: 1120px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --transition-speed: 0.5s;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #121212;
-    color: #fff;
-    overflow-x: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Cabeçalho */
-header h1 {
-    font-size: 3rem;
-    font-weight: bold;
-}
-header .btn {
-    padding: 10px 30px;
-    font-size: 1.1rem;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-header .btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+/* 2. Layout e Componentes Globais */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-/* Navegação */
-.navbar-nav .nav-link {
-    font-size: 1.1rem;
-    margin: 0 10px;
-    transition: color 0.3s;
-}
-.navbar-nav .nav-link:hover {
-    color: #ff3d00;
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform var(--transition-speed) ease;
 }
 
-/* Seção Principal */
+.btn--primary {
+  background-color: var(--text-primary);
+  color: #000;
+  box-shadow: var(--shadow);
+}
+
+.btn--secondary {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--line-color);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* 3. Arquitetura Mobile-First (Estilos para telas pequenas) */
+
+/* Cabeçalho Mobile */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: saturate(180%) blur(10px);
+  background: rgba(11, 11, 13, 0.85);
+  border-bottom: 1px solid var(--line-color);
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+.brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Menu Hambúrguer */
+.nav-toggle {
+  display: block; /* Visível no mobile */
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.nav-menu {
+  display: none; /* Escondido por padrão no mobile */
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100vh;
+  background-color: var(--bg-secondary);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-menu.is-active {
+  display: flex;
+  transform: translateX(0);
+}
+
+.nav-menu a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* Hero Section Mobile */
 .hero-section {
-    padding: 100px 0;
+  padding: 48px 0;
+  text-align: center;
 }
-.hero-section h2 {
-    font-size: 2.5rem;
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
 }
-.hero-section p {
-    font-size: 1.2rem;
-    color: #ccc;
+.hero-text h1 {
+  font-size: clamp(2rem, 8vw, 2.5rem);
 }
-.hero-section .btn {
-    padding: 10px 30px;
-    font-size: 1.1rem;
-    transition: transform 0.3s, box-shadow 0.3s;
+.cta-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
 }
-.hero-section .btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-}
-
-/* Efeito de Zoom na Imagem */
-.hover-zoom {
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.hover-zoom:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+.hero-media img {
+  width: 100%;
+  border-radius: var(--border-radius);
 }
 
-/* Seção de Habilidades - cartões */
-.skills-section h2 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-}
-.skill-card {
-    background-color: #2a2a2a;
-    border-radius: .5rem;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
-}
-.skill-card i {
-    margin-bottom: .5rem;
-}
-.skill-card h5 {
-    font-weight: bold;
-    margin-top: .5rem;
-}
-.skill-card p {
-    font-size: 0.95rem;
-    color: #ccc;
-}
+/* 4. Estilos para Telas Maiores (Desktop) */
+@media (min-width: 900px) {
+  .nav-toggle {
+    display: none; /* Esconde o botão hambúrguer */
+  }
 
-/* Ajustes para os ícones de skill */
-.skill-icon {
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-    transition: transform 0.3s;
-}
-.skill-card:hover .skill-icon {
-    transform: scale(1.1);
-}
+  .nav-menu {
+    display: flex; /* Exibe o menu normalmente */
+    position: static;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    background: none;
+    transform: none;
+    gap: 1.5rem;
+  }
 
-/* Título dentro do cartão */
-.skill-card h6 {
-    margin-top: 0.5rem;
-    font-size: 0.95rem;
-    font-weight: bold;
-    color: #fff;
-}
+  .hero-section {
+    padding: 72px 0;
+    text-align: left;
+  }
 
+  .hero-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 3rem;
+  }
 
-/* Seção de Portfólio */
-.portfolio-section h2 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-}
-.portfolio-section .card {
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.portfolio-section .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
-}
-.portfolio-section .card-img-top {
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.3s;
-}
-.portfolio-section .card-img-top:hover {
-    transform: scale(1.1);
-}
-
-/* Rodapé */
-footer a {
-    color: #0d6efd;
-    text-decoration: none;
-}
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .hero-section {
-        text-align: center;
-    }
-    .hero-section .col-md-6 {
-        margin-bottom: 30px;
-    }
-    .navbar-nav {
-        text-align: center;
-    }
-    .portfolio-section .card-img-top {
-        height: 150px;
-    }
+  .cta-buttons {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
 }
