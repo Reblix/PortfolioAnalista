@@ -9,7 +9,7 @@
   <link rel="canonical" href="https://https://portfolio-analista.vercel.app//" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph / Twitter -->
+  
   <meta property="og:title" content="Felipe Reblin — Desenvolvedor(a)" />
   <meta property="og:description" content="Power Platform | JavaScript | HTML | CSS | Python" />
   <meta property="og:type" content="website" />
@@ -135,31 +135,31 @@
     }
     .stack{display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.6rem;}
 
-    /* Timeline (Experiência) */
+   
     .timeline{position:relative; margin-left:10px;}
     .timeline::before{content:""; position:absolute; left:0; top:0; bottom:0; width:2px; background:var(--line);}
     .item{position:relative; padding-left:24px; margin-bottom:24px;}
     .item::before{content:""; position:absolute; left:-4px; top:.4rem; width:10px; height:10px; border-radius:50%; background:#2f2f36; border:2px solid var(--line);}
 
-    /* Projeto preview */
+    
     .thumb{border:1px solid var(--line); border-radius:10px; overflow:hidden; margin-bottom:10px; background:#0f0f14;}
     .thumb img{display:block; width:100%; height:auto;}
     .actions{display:flex; gap:.6rem; margin-top:.8rem;}
     .actions a{font-size:.9rem; text-decoration:none; color:var(--txt); border:1px solid var(--line); padding:.5rem .7rem; border-radius:8px;}
     .actions a:hover{background:#15151b;}
 
-    /* Footer */
+  
     footer{padding:40px 0; color:var(--muted);}
     .social{display:flex; gap:.8rem; flex-wrap:wrap;}
     .social a{color:var(--muted); text-decoration:none; border:1px solid var(--line); padding:.5rem .7rem; border-radius:8px;}
     .social a:hover{color:var(--txt);}
 
-    /* Micro animações de entrada */
+    
     .reveal{opacity:0; transform:translateY(12px); transition: opacity var(--speed) ease, transform var(--speed) ease;}
     .reveal.is-visible{opacity:1; transform:none;}
   </style>
 
-  <!-- ====== Schema.org | JSON-LD (Pessoa) ====== -->
+ 
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -194,7 +194,7 @@
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#skills">Habilidades</a></li>
           <li><a href="#experiencia">Experiência</a></li>
-          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#">Projetos</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
@@ -218,9 +218,9 @@
         </div>
       </div>
       <aside class="hero-media reveal" aria-label="Mídia de destaque">
-        <!-- Trocando a imagem e/ou vídeo, mantenha alt/aria apropriados -->
+        
         <img src="/assets/gifPerfil.gif" alt="Interface de um app criado no Power Apps" width="1200" height="800" loading="eager" />
-        <!-- Exemplo com vídeo local:
+        <!-- se for video:
         <video src="/assets/video/demo.mp4" controls preload="metadata" aria-label="Demonstração de app desenvolvido"></video>
         -->
       </aside>
@@ -324,11 +324,11 @@
             <div class="thumb">
               <img src="/assets/projeto1.png" alt="Captura de tela do Projeto 1" width="800" height="600" loading="lazy" decoding="async" />
             </div>
-            <h3>App de Solicitação de Serviços</h3>
-            <p class="meta">Power Apps • Automate • Dataverse</p>
-            <p>Portal interno para abertura e tratamento de chamados com automações e relatórios.</p>
+            <h3>Guia do TST</h3>
+            <p class="meta">Java Script • HTML • CSS</p>
+            <p>Aplicativo responsivo PWA com capacidade offline para auxiliar técnicos de segurança do trabalho em campo.</p>
             <div class="stack">
-              <span class="pill">Acessibilidade</span><span class="pill">Auditoria</span><span class="pill">KPIs</span>
+              <span class="pill">Acessibilidade</span><span class="pill">Auditoria</span><span class="pill">Acesso offline</span>
             </div>
             <div class="actions">
               <a href="https://guiadotst.vercel.app/" target="_blank" rel="noopener noreferrer">Ver demo</a>
@@ -340,28 +340,26 @@
           <!-- Projeto 2 -->
           <article class="card reveal" tabindex="0">
             <div class="thumb">
-              <img src="/assets/img/projetos/projeto-2.jpg" alt="Captura de tela do Projeto 2" width="800" height="600" loading="lazy" decoding="async" />
+              <img src="/assets/projeto2.png" alt="Captura de tela do Projeto 2" width="800" height="600" loading="lazy" decoding="async" />
             </div>
-            <h3>Dashboard de Operações</h3>
-            <p class="meta">Power BI • DAX • Gateways</p>
-            <p>Indicadores operacionais com atualização agendada e controle de acesso.</p>
+            <h3>SSMAX +</h3>
+            <p class="meta">Power Apps • Power Fx • Power Automate</p>
+            <p>Aplicação power apps para inspeções técnicas de segurança do trabalho e gestão de desvios.</p>
             <div class="actions">
-              <a href="https://exemplo.com/demo-projeto-2" target="_blank" rel="noopener noreferrer">Ver demo</a>
-              <a href="https://github.com/seuusuario/projeto-2" target="_blank" rel="noopener noreferrer">Código</a>
+             <a href="/assets/projetos.pdf" download>Veja mais sobre esse projeto e outros aqui.</a>
             </div>
           </article>
 
           <!-- Projeto 3 -->
           <article class="card reveal" tabindex="0">
             <div class="thumb">
-              <img src="/assets/img/projetos/projeto-3.jpg" alt="Captura de tela do Projeto 3" width="800" height="600" loading="lazy" decoding="async" />
+              <img src="/assets/projeto3.png" alt="Captura de tela do Projeto 3" width="800" height="600" loading="lazy" decoding="async" />
             </div>
-            <h3>Landing Page de Produto</h3>
-            <p class="meta">HTML • CSS • JS</p>
-            <p>Página leve e otimizada, com micro-interações e SEO técnico.</p>
+            <h3>SGMAX</h3>
+            <p class="meta">Power Apps • Power FX • Power Automate</p>
+            <p>Aplicação power apps para equipe de gestão com painéis de gerenciamento de efetivo, gestão de documentos e mais.</p>
             <div class="actions">
-              <a href="https://exemplo.com/demo-projeto-3" target="_blank" rel="noopener noreferrer">Ver demo</a>
-              <a href="https://github.com/seuusuario/projeto-3" target="_blank" rel="noopener noreferrer">Código</a>
+              <a href="/assets/projetos.pdf" download>Veja mais sobre esse projeto e outros aqui.</a>
             </div>
           </article>
         </div>
@@ -373,16 +371,16 @@
       <div class="wrap grid cols-2">
         <div class="reveal">
           <h2>Formação</h2>
-          <p><strong>Análise e Desenvolvimento de Sistemas</strong> — em formação.</p>
+          <p><strong>Análise e Desenvolvimento de Sistemas</strong> — em formação na Universidade Uniamérica.</p>
           <p class="muted">Estudos contínuos em arquitetura de soluções, boas práticas de código, UX e dados.</p>
         </div>
         <div class="reveal">
           <div class="card">
-            <h3>Certificações & Cursos</h3>
+            <h3>Certificações</h3>
             <ul class="muted">
-              <li>Microsoft Power Platform (insira as suas aqui)</li>
-              <li>JavaScript/Front-end (curso X)</li>
-              <li>Python (curso Y)</li>
+              <li>Full Stack Developer (Descomplica Faculdade Digital)</li>
+              <li>BackEnd Developer(Descomplica Faculdade Digital)</li>
+              <li>Data Science & Machine Learning / Python (Asimov Academy)</li>
             </ul>
           </div>
         </div>
@@ -396,7 +394,7 @@
           <h2>Contato</h2>
           <p class="muted">Vamos conversar sobre seu projeto ou oportunidade.</p>
           <p>
-            <a class="btn" href="mailto:voce@seudominio.com">✉️ Enviar e-mail</a>
+            <a class="btn" href="mailto:reblinfelipe@gmail.com">✉️ Enviar e-mail</a>
             <a class="btn secondary" href="https://www.linkedin.com/in/seulinkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </p>
           <p class="muted">Também posso disponibilizar um formulário hospedado (ex.: Forms, Netlify, etc.).</p>
@@ -413,24 +411,24 @@
     </section>
   </main>
 
-  <!-- ====== Footer ====== -->
+  
   <footer>
     <div class="wrap">
       <div class="social">
-        <a href="https://github.com/seuusuario" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/seulinkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="/assets/curriculo.pdf" download>Currículo (PDF)</a>
+        <a href="https://github.com/Reblix" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/felipe-reblin-ehs/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="/assets/CV_FELIPE REBLIN.pdf" download>Currículo (PDF)</a>
       </div>
-      <p style="margin-top:1rem;">© <span id="year"></span> Seu Nome. Todos os direitos reservados.</p>
+      <p style="margin-top:1rem;">© <span id="year"></span> Felipe Reblin. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <!-- ====== Scripts mínimos ====== -->
+  
   <script>
-    // Atualiza ano no rodapé
+    
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Revela elementos ao rolar (micro-animação; respeita prefers-reduced-motion via CSS)
+    
     const observer = 'IntersectionObserver' in window ? new IntersectionObserver((entries)=>{
       entries.forEach(entry=>{
         if(entry.isIntersecting) entry.target.classList.add('is-visible');
@@ -441,12 +439,12 @@
       if(observer) observer.observe(el); else el.classList.add('is-visible');
     });
 
-    // Formulário de contato (placeholder: envia via mailto)
+    
     function handleContact(e){
       e.preventDefault();
       const data = new FormData(e.target);
       const nome = data.get('nome'), email = data.get('email'), msg = data.get('mensagem');
-      const mailto = `mailto:voce@seudominio.com?subject=${encodeURIComponent('Contato via portfólio — '+nome)}&body=${encodeURIComponent(msg + '\n\nResponder para: ' + email)}`;
+      const mailto = `mailto:reblinfelipe@gmail.com?subject=${encodeURIComponent('Contato via portfólio — '+nome)}&body=${encodeURIComponent(msg + '\n\nResponder para: ' + email)}`;
       window.location.href = mailto;
       const fb = document.getElementById('form-feedback');
       fb.textContent = "Abrindo seu cliente de e-mail…";
@@ -454,6 +452,7 @@
   </script>
 </body>
 </html>
+
 
 
 
