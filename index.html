@@ -1,34 +1,175 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+  <!-- ====== Metadados essenciais ====== -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Felipe Reblin — Desenvolvedor Power Platform & Web</title>
-  <meta name="description" content="Portfólio de Felipe Reblin, formando em Análise e Desenvolvimento de Sistemas, com 5+ anos em Microsoft Power Platform e desenvolvimento web." />
-  <link rel="canonical" href="https://portfolio-analista.vercel.app/" />
+  <title>Felipe Reblin — Desenvolvedor(a) | Power Platform & Web</title>
+  <meta name="description" content="Portfólio de Felipe Reblin — formando(a) em Análise e Desenvolvimento de Sistemas, com 5+ anos em Microsoft Power Platform e desenvolvimento web (JavaScript, HTML, CSS, Python)." />
+  <link rel="canonical" href="https://https://portfolio-analista.vercel.app//" />
   <meta name="robots" content="index, follow" />
 
-  <meta property="og:title" content="Felipe Reblin — Desenvolvedor" />
+  
+  <meta property="og:title" content="Felipe Reblin — Desenvolvedor(a)" />
   <meta property="og:description" content="Power Platform | JavaScript | HTML | CSS | Python" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://portfolio-analista.vercel.app/" />
-  <meta property="og:image" content="https://portfolio-analista.vercel.app/assets/og-image.jpg" />
+  <meta property="og:url" content="https://seudominio.com/" />
+  <meta property="og:image" content="https://seudominio.com/assets/img/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
+  <!-- Favicon (opcional) -->
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
 
-  <link rel="stylesheet" href="style.css">
+  <!-- ====== Estilo ====== -->
+  <style>
+    :root{
+      --bg:#0b0b0d;
+      --bg-elev:#121216;
+      --txt:#eaeaea;
+      --muted:#b5b5b5;
+      --line:#1f1f24;
+      --accent:#ffffff; /* minimalista: sem cor vibrante; contraste alto */
+      --radius:12px;
+      --maxw:1120px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --speed:.6s;
+    }
+    /* Respeitar usuários com "reduzir movimento" (acessibilidade) */
+    @media (prefers-reduced-motion: reduce){
+      :root{ --speed: 0s; }
+      *{ animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
 
+    html,body{height:100%;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--txt);
+      font:16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Link "pular para conteúdo" para teclado/leitores de tela */
+    .skip-link{
+      position:absolute; left:-999px; top:auto;
+      background:var(--accent); color:#000; padding:.6rem 1rem; border-radius:8px;
+    }
+    .skip-link:focus{left:1rem; top:1rem; z-index:9999;}
+
+    /* ====== Layout ====== */
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px;}
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: saturate(180%) blur(10px);
+      background:color-mix(in oklab, var(--bg) 85%, transparent);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:1rem;
+      height:64px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:.75rem; text-decoration:none; color:var(--txt);
+    }
+    .brand img{width:36px; height:36px; border-radius:50%; object-fit:cover;}
+    .brand strong{font-size:1rem; letter-spacing:.3px;}
+    nav ul{display:flex; gap:1rem; list-style:none; margin:0; padding:0;}
+    nav a{
+      color:var(--txt); text-decoration:none; padding:.5rem .75rem; border-radius:8px;
+    }
+    nav a:hover, nav a:focus{background:var(--bg-elev); outline:none;}
+
+    /* Hero */
+    .hero{
+      display:grid; grid-template-columns: 1.2fr .8fr; align-items:center; gap:2rem;
+      padding:72px 0; border-bottom:1px solid var(--line);
+    }
+    .hero h1{margin:.2rem 0 1rem; font-size:clamp(2rem, 4vw, 3rem); line-height:1.1;}
+    .kicker{color:var(--muted); font-weight:600; letter-spacing:.12em; text-transform:uppercase; font-size:.8rem;}
+    .hero p{color:var(--muted); max-width:60ch;}
+    .cta{display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.25rem;}
+    .btn{
+      display:inline-flex; align-items:center; gap:.5rem;
+      background:var(--txt); color:#000; border:0; padding:.9rem 1.1rem; border-radius:10px;
+      font-weight:600; text-decoration:none; box-shadow:var(--shadow);
+    }
+    .btn.secondary{background:var(--bg-elev); color:var(--txt); box-shadow:none; border:1px solid var(--line);}
+    .btn:hover, .btn:focus{transform:translateY(-1px);}
+
+    .hero-media{
+      background:linear-gradient(180deg, #141418, #0d0d12);
+      border:1px solid var(--line); border-radius:var(--radius); padding:10px;
+    }
+    .hero-media img, .hero-media video{
+      display:block; width:100%; height:auto; border-radius:10px;
+    }
+
+    /* Seções */
+    section{padding:64px 0; border-bottom:1px solid var(--line);}
+    section h2{font-size:1.6rem; margin:0 0 1rem;}
+    .muted{color:var(--muted);}
+    .grid{display:grid; gap:1.25rem;}
+    .cols-3{grid-template-columns:repeat(3,minmax(0,1fr));}
+    .cols-2{grid-template-columns:repeat(2,minmax(0,1fr));}
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr; padding:48px 0;}
+      .cols-3{grid-template-columns:1fr;}
+      .cols-2{grid-template-columns:1fr;}
+    }
+
+    /* Cards */
+    .card{
+      background:var(--bg-elev); border:1px solid var(--line); border-radius:var(--radius);
+      padding:18px; transition:transform .25s ease, border-color .25s ease;
+    }
+    .card:hover, .card:focus-within{
+      transform:translateY(-2px); border-color:#2a2a31;
+    }
+    .card h3{margin:.2rem 0 .6rem; font-size:1.05rem;}
+    .meta{font-size:.9rem; color:var(--muted);}
+    .pill{
+      display:inline-block; font-size:.75rem; padding:.35rem .6rem; border:1px solid var(--line); border-radius:999px; color:var(--muted);
+    }
+    .stack{display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.6rem;}
+
+   
+    .timeline{position:relative; margin-left:10px;}
+    .timeline::before{content:""; position:absolute; left:0; top:0; bottom:0; width:2px; background:var(--line);}
+    .item{position:relative; padding-left:24px; margin-bottom:24px;}
+    .item::before{content:""; position:absolute; left:-4px; top:.4rem; width:10px; height:10px; border-radius:50%; background:#2f2f36; border:2px solid var(--line);}
+
+    
+    .thumb{border:1px solid var(--line); border-radius:10px; overflow:hidden; margin-bottom:10px; background:#0f0f14;}
+    .thumb img{display:block; width:100%; height:auto;}
+    .actions{display:flex; gap:.6rem; margin-top:.8rem;}
+    .actions a{font-size:.9rem; text-decoration:none; color:var(--txt); border:1px solid var(--line); padding:.5rem .7rem; border-radius:8px;}
+    .actions a:hover{background:#15151b;}
+
+  
+    footer{padding:40px 0; color:var(--muted);}
+    .social{display:flex; gap:.8rem; flex-wrap:wrap;}
+    .social a{color:var(--muted); text-decoration:none; border:1px solid var(--line); padding:.5rem .7rem; border-radius:8px;}
+    .social a:hover{color:var(--txt);}
+
+    
+    .reveal{opacity:0; transform:translateY(12px); transition: opacity var(--speed) ease, transform var(--speed) ease;}
+    .reveal.is-visible{opacity:1; transform:none;}
+  </style>
+
+ 
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Person",
-    "name":"Felipe Reblin",
-    "jobTitle":"Desenvolvedor — Power Platform & Web",
-    "description":"Formando em Análise e Desenvolvimento de Sistemas. 5+ anos em Microsoft Power Platform. Desenvolvimento de apps com JavaScript, HTML, CSS e Python.",
-    "url":"https://portfolio-analista.vercel.app/",
-    "image":"https://portfolio-analista.vercel.app/assets/img/avatar.jpg",
-    "email":"mailto:reblinfelipe@gmail.com",
+    "name":"Seu Nome",
+    "jobTitle":"Desenvolvedor(a) — Power Platform & Web",
+    "description":"Formando(a) em Análise e Desenvolvimento de Sistemas. 5+ anos em Microsoft Power Platform. Desenvolvimento de apps com JavaScript, HTML, CSS e Python.",
+    "url":"https://seudominio.com/",
+    "image":"https://seudominio.com/assets/img/avatar.jpg",
+    "email":"mailto:voce@seudominio.com",
     "sameAs":[
       "https://github.com/Reblix",
       "https://www.linkedin.com/in/felipe-reblin-ehs/"
@@ -39,62 +180,283 @@
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <header class="header">
-    <div class="container">
-      <nav class="main-nav" role="navigation" aria-label="Principal">
-        <a class="brand" href="#hero" aria-label="Página inicial">
-          <img src="/assets/perfil.png" alt="Foto de perfil de Felipe Reblin" />
-          <strong>Felipe Reblin</strong>
-        </a>
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="#about">Sobre</a></li>
+  <!-- ====== Header / Nav ====== -->
+  <header>
+    <div class="wrap nav" role="navigation" aria-label="Principal">
+      <a class="brand" href="#topo" aria-label="Página inicial">
+        <img src="/assets/perfil.png" alt="Foto de perfil" loading="lazy" decoding="async" />
+        <strong>Felipe Reblin</strong>
+      </a>
+      <nav aria-label="Seções">
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
           <li><a href="#skills">Habilidades</a></li>
-          <li><a href="#experience">Experiência</a></li>
-          <li><a href="#projects">Projetos</a></li>
-          <li><a href="#contact">Contato</a></li>
+          <li><a href="#experiencia">Experiência</a></li>
+          <li><a href="#">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main id="main-content">
-    <section class="hero-section" id="hero">
-      <div class="container hero-grid">
-        <div class="hero-text reveal">
-          <p class="kicker">Power Platform • Desenvolvimento Web</p>
-          <h1>Transformo processos em produtos digitais simples e eficazes.</h1>
-          <p>
-            Formando em <strong>Análise e Desenvolvimento de Sistemas</strong>, com <strong>5 anos</strong> de experiência com
-            <strong>Microsoft Power Platform</strong> e desenvolvimento de apps com
-            <strong>JavaScript</strong>, <strong>HTML</strong>, <strong>CSS</strong> e <strong>Python</strong>.
+  <!-- ====== Hero ====== -->
+  <main id="conteudo">
+    <section class="wrap hero" id="topo">
+      <div class="reveal">
+        <p class="kicker">Power Platform • Desenvolvimento Web</p>
+        <h1>Transformo processos em produtos digitais simples e eficazes.</h1>
+        <p>
+          Formando(a) em <strong>Análise e Desenvolvimento de Sistemas</strong>, com <strong>5 anos</strong> de experiência com
+          <strong>Microsoft Power Platform</strong> (Power Apps, Power Automate, Power BI) e desenvolvimento de apps com
+          <strong>JavaScript</strong>, <strong>HTML</strong>, <strong>CSS</strong> e <strong>Python</strong>.
+        </p>
+        <div class="cta">
+          <a class="btn" href="/assets/curriculo.pdf" download>⬇️ Baixar currículo (PDF)</a>
+          <a class="btn secondary" href="#projetos">Ver projetos</a>
+        </div>
+      </div>
+      <aside class="hero-media reveal" aria-label="Mídia de destaque">
+        
+        <img src="/assets/gifPerfil.gif" alt="Interface de um app criado no Power Apps" width="1200" height="800" loading="eager" />
+        <!-- se for video:
+        <video src="/assets/video/demo.mp4" controls preload="metadata" aria-label="Demonstração de app desenvolvido"></video>
+        -->
+      </aside>
+    </section>
+
+    <!-- ====== Sobre ====== -->
+    <section id="sobre">
+      <div class="wrap grid cols-2">
+        <div class="reveal">
+          <h2>Sobre mim</h2>
+          <p class="muted">
+            Olá, me chamo Felipe Reblin, tenho 36 anos.
+            Meu foco é entender que problema posso resolver e transformar essa solução em algo real e prático.
           </p>
-          <div class="cta-buttons">
-            <a class="btn btn-primary" href="/assets/curriculo.pdf" download>⬇️ Baixar currículo</a>
-            <a class="btn btn-secondary" href="#projects">Ver projetos</a>
+          <ul>
+            <li>🧩 <strong>Especialidade:</strong> automação de processos, apps internos e dashboards.</li>
+            <li>🛠️ <strong>Stack atual:</strong> Power Apps, Power Automate, Power BI, Dataverse, JS/TS, HTML, CSS, Python.</li>
+            <li>✅ <strong>Boas práticas:</strong> acessibilidade, testes básicos, CI/CD simples, documentação enxuta.</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <div class="card">
+            <h3>Serviços</h3>
+            <p class="muted">Desenvolvimento sob demanda de aplicativos e automações.</p>
+            <div class="stack">
+              <span class="pill">App Corporativo</span>
+              <span class="pill">Automação</span>
+              <span class="pill">Dashboard</span>
+              <span class="pill">Integrações</span>
+              <span class="pill">Landing Page</span>
+            </div>
           </div>
         </div>
-        <aside class="hero-media reveal" aria-label="Mídia de destaque">
-          <img src="/assets/gifPerfil.gif" alt="Interface de um app criado no Power Apps" loading="eager" />
-        </aside>
       </div>
     </section>
 
-    </main>
+    <!-- ====== Habilidades ====== -->
+    <section id="skills">
+      <div class="wrap">
+        <h2>Habilidades-chave</h2>
+        <p class="muted">Foco em resultados, clareza técnica e colaboração.</p>
+        <div class="grid cols-3">
+          <article class="card reveal" tabindex="0">
+            <h3>Power Platform</h3>
+            <p class="meta">Power Apps • Power Automate • Power BI • Dataverse</p>
+            <p>Aplicativos low-code robustos, integrações e fluxos confiáveis. Governança e boas práticas.</p>
+          </article>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="social-links">
+          <article class="card reveal" tabindex="0">
+            <h3>Front-end</h3>
+            <p class="meta">JavaScript • HTML • CSS</p>
+            <p>Interfaces acessíveis e responsivas. Código limpo, sem dependências desnecessárias.</p>
+            <div class="stack">
+              <span class="pill">A11y</span><span class="pill">Semântica</span><span class="pill">Performance</span>
+            </div>
+          </article>
+
+          <article class="card reveal" tabindex="0">
+            <h3>Back-end & Data</h3>
+            <p class="meta">Python</p>
+            <p>APIs simples, ETL leve e automações. Testes e logs mínimos para manutenção.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Experiência ====== -->
+    <section id="experiencia">
+      <div class="wrap">
+        <h2>Experiência</h2>
+        <div class="timeline">
+          <div class="item reveal">
+            <h3>Especialista em Power Platform</h3>
+            <p class="meta">2020 — Presente</p>
+            <p>Concepção e entrega de apps e fluxos de automação, integrações com Dataverse/SharePoint e dashboards em Power BI.</p>
+            <div class="stack">
+              <span class="pill">Power Apps</span> <span class="pill">Automate</span> <span class="pill">BI</span> <span class="pill">Governança</span>
+            </div>
+          </div>
+          <div class="item reveal">
+            <h3>Desenvolvimento Web</h3>
+            <p class="meta">Projetos diversos</p>
+            <p>Criação de SPAs leves e páginas institucionais com foco em UX, acessibilidade e SEO.</p>
+            <div class="stack">
+              <span class="pill">JavaScript</span> <span class="pill">HTML</span> <span class="pill">CSS</span> <span class="pill">Python</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Projetos ====== -->
+    <section id="projetos">
+      <div class="wrap">
+        <h2>Projetos em destaque</h2>
+        <p class="muted">Cada card inclui objetivo, stack e links para demo e código.</p>
+
+        <div class="grid cols-3">
+          <!-- Projeto 1 -->
+          <article class="card reveal" tabindex="0">
+            <div class="thumb">
+              <img src="/assets/projeto1.png" alt="Captura de tela do Projeto 1" width="800" height="600" loading="lazy" decoding="async" />
+            </div>
+            <h3>Guia do TST</h3>
+            <p class="meta">Java Script • HTML • CSS</p>
+            <p>Aplicativo responsivo PWA com capacidade offline para auxiliar técnicos de segurança do trabalho em campo.</p>
+            <div class="stack">
+              <span class="pill">Acessibilidade</span><span class="pill">Auditoria</span><span class="pill">Acesso offline</span>
+            </div>
+            <div class="actions">
+              <a href="https://guiadotst.vercel.app/" target="_blank" rel="noopener noreferrer">Ver demo</a>
+              <a href="https://github.com/Reblix/guiatst" target="_blank" rel="noopener noreferrer">Código</a>
+              <a href="/assets/projetos.pdf" download>Veja mais projetos aqui</a>
+            </div>
+          </article>
+
+          <!-- Projeto 2 -->
+          <article class="card reveal" tabindex="0">
+            <div class="thumb">
+              <img src="/assets/projeto2.png" alt="Captura de tela do Projeto 2" width="800" height="600" loading="lazy" decoding="async" />
+            </div>
+            <h3>SSMAX +</h3>
+            <p class="meta">Power Apps • Power Fx • Power Automate</p>
+            <p>Aplicação power apps para inspeções técnicas de segurança do trabalho e gestão de desvios.</p>
+            <div class="actions">
+             <a href="/assets/projetos.pdf" download>Veja mais sobre esse projeto e outros aqui.</a>
+            </div>
+          </article>
+
+          <!-- Projeto 3 -->
+          <article class="card reveal" tabindex="0">
+            <div class="thumb">
+              <img src="/assets/projeto3.png" alt="Captura de tela do Projeto 3" width="800" height="600" loading="lazy" decoding="async" />
+            </div>
+            <h3>SGMAX</h3>
+            <p class="meta">Power Apps • Power FX • Power Automate</p>
+            <p>Aplicação power apps para equipe de gestão com painéis de gerenciamento de efetivo, gestão de documentos e mais.</p>
+            <div class="actions">
+              <a href="/assets/projetos.pdf" download>Veja mais sobre esse projeto e outros aqui.</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Formação ====== -->
+    <section id="formacao">
+      <div class="wrap grid cols-2">
+        <div class="reveal">
+          <h2>Formação</h2>
+          <p><strong>Análise e Desenvolvimento de Sistemas</strong> — em formação na Universidade Uniamérica.</p>
+          <p class="muted">Estudos contínuos em arquitetura de soluções, boas práticas de código, UX e dados.</p>
+        </div>
+        <div class="reveal">
+          <div class="card">
+            <h3>Certificações</h3>
+            <ul class="muted">
+              <li>Full Stack Developer (Descomplica Faculdade Digital)</li>
+              <li>BackEnd Developer(Descomplica Faculdade Digital)</li>
+              <li>Data Science & Machine Learning / Python (Asimov Academy)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Contato ====== -->
+    <section id="contato">
+      <div class="wrap grid cols-2">
+        <div class="reveal">
+          <h2>Contato</h2>
+          <p class="muted">Vamos conversar sobre seu projeto ou oportunidade.</p>
+          <p>
+            <a class="btn" href="mailto:reblinfelipe@gmail.com">✉️ Enviar e-mail</a>
+            <a class="btn secondary" href="https://www.linkedin.com/in/seulinkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </p>
+          
+        </div>
+        <form class="card reveal" aria-label="Formulário de contato" onsubmit="handleContact(event)">
+          <h3>Mensagem rápida</h3>
+          <label>Nome<br><input name="nome" required aria-required="true" /></label><br><br>
+          <label>E-mail<br><input type="email" name="email" required aria-required="true" /></label><br><br>
+          <label>Mensagem<br><textarea name="mensagem" rows="4" required aria-required="true"></textarea></label><br><br>
+          <button class="btn" type="submit">Enviar</button>
+          <p id="form-feedback" class="muted" role="status" aria-live="polite" style="margin-top:.5rem;"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  
+  <footer>
+    <div class="wrap">
+      <div class="social">
         <a href="https://github.com/Reblix" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/felipe-reblin-ehs/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="/assets/CV_FELIPE REBLIN.pdf" download>Currículo (PDF)</a>
       </div>
-      <p>© <span id="year"></span> Felipe Reblin. Todos os direitos reservados.</p>
+      <p style="margin-top:1rem;">© <span id="year"></span> Felipe Reblin. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  
+  <script>
+    
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    
+    const observer = 'IntersectionObserver' in window ? new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, {threshold: 0.08}) : null;
+
+    document.querySelectorAll('.reveal').forEach(el=>{
+      if(observer) observer.observe(el); else el.classList.add('is-visible');
+    });
+
+    
+    function handleContact(e){
+      e.preventDefault();
+      const data = new FormData(e.target);
+      const nome = data.get('nome'), email = data.get('email'), msg = data.get('mensagem');
+      const mailto = `mailto:reblinfelipe@gmail.com?subject=${encodeURIComponent('Contato via portfólio — '+nome)}&body=${encodeURIComponent(msg + '\n\nResponder para: ' + email)}`;
+      window.location.href = mailto;
+      const fb = document.getElementById('form-feedback');
+      fb.textContent = "Abrindo seu cliente de e-mail…";
+    }
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
